@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/ace.min.css" id="main-ace-style" />
+    <link rel="stylesheet" href="../css/ace-skins.min.css" />
+    <link rel="stylesheet" href="../css/ace-rtl.min.css" />
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='../js/jquery.min.js'>"+"<"+"/script>");
+    </script>
+    <script type="text/javascript">
+        if('ontouchstart' in document.documentElement) document.write("<script src='../js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+    </script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery-ui.custom.min.js"></script>
+    <script src="../js/jquery.ui.touch-punch.min.js"></script>
+    <script src="../js/ace-elements.min.js"></script>
+    <script src="../js/ace.min.js"></script>
+</head>
+<body class="no-skin">
+<!-- 头部 -->
+<div id="navbar" class="navbar navbar-default">
+    <div class="navbar-container" id="navbar-container">
+
+        <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+            <span class="sr-only">Toggle sidebar</span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+
+            <span class="icon-bar"></span>
+        </button>
+
+        <!-- /section:basics/sidebar.mobile.toggle -->
+        <div class="navbar-header pull-left">
+            <!-- #section:basics/navbar.layout.brand -->
+            <a href="index.html" class="navbar-brand">
+                <small>
+                    <img src="../image/logo.png" alt="" />
+                </small>
+            </a>
+        </div>
+
+        <div class="navbar-buttons navbar-header pull-right" role="navigation">
+            <ul class="nav ace-nav">
+
+                <li class="green">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
+                        <span class="badge badge-success">5</span>
+                    </a>
+
+                    <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                        <li class="dropdown-header">
+                            <i class="ace-icon fa fa-envelope-o"></i>
+                            13条未读信息
+                        </li>
+
+                        <li class="dropdown-content">
+                            <ul class="dropdown-menu dropdown-navbar">
+                                <li>
+                                    <a href="#">
+                                        <img src="../image/avatar.png" class="msg-photo" alt="Alex's Avatar" />
+                                        <span class="msg-body">
+                                                        <span class="msg-title">
+                                                            <span class="blue">B2C:</span>
+                                                            系统产生20个错误，12个警告...
+                                                        </span>
+
+                                                        <span class="msg-time">
+                                                            <i class="ace-icon fa fa-clock-o"></i>
+                                                            <span>2014-12-15 18:00:00</span>
+                                                        </span>
+                                                    </span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img src="../image/avatar3.png" class="msg-photo" alt="Susan's Avatar" />
+                                        <span class="msg-body">
+                                                        <span class="msg-title">
+                                                            <span class="blue">积分商城:</span>
+                                                            系统产生20个错误，12个警告...
+                                                        </span>
+
+                                                        <span class="msg-time">
+                                                            <i class="ace-icon fa fa-clock-o"></i>
+                                                            <span>2014-12-15 18:00:00</span>
+                                                        </span>
+                                                    </span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img src="../image/avatar4.png" class="msg-photo" alt="Bob's Avatar" />
+                                        <span class="msg-body">
+                                                        <span class="msg-title">
+                                                            <span class="blue">政府机票采购:</span>
+                                                            系统产生20个错误，12个警告...
+                                                        </span>
+
+                                                        <span class="msg-time">
+                                                            <i class="ace-icon fa fa-clock-o"></i>
+                                                            <span>2014-12-15 18:00:00</span>
+                                                        </span>
+                                                    </span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img src="../image/avatar2.png" class="msg-photo" alt="Kate's Avatar" />
+                                        <span class="msg-body">
+                                                        <span class="msg-title">
+                                                            <span class="blue">B2B:</span>
+                                                            系统产生20个错误，12个警告...
+                                                        </span>
+
+                                                        <span class="msg-time">
+                                                            <i class="ace-icon fa fa-clock-o"></i>
+                                                            <span>2014-12-15 18:00:00</span>
+                                                        </span>
+                                                    </span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                        <img src="../image/avatar5.png" class="msg-photo" alt="Fred's Avatar" />
+                                        <span class="msg-body">
+                                                        <span class="msg-title">
+                                                            <span class="blue">货运系统:</span>
+                                                            系统产生20个错误，12个警告...
+                                                        </span>
+
+                                                        <span class="msg-time">
+                                                            <i class="ace-icon fa fa-clock-o"></i>
+                                                            <span>2014-12-15 18:00:00</span>
+                                                        </span>
+                                                    </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="inbox.html">
+                                查看全部消息
+                                <i class="ace-icon fa fa-arrow-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- #section:basics/navbar.user_menu -->
+                <li class="light-blue">
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                        <img class="nav-user-photo" src="../image/user.jpg" alt="Jason's Photo" />
+                        <span class="user-info" >
+                                        结算运维
+                                    </span>
+
+                        <i class="ace-icon fa fa-caret-down"></i>
+                    </a>
+
+                    <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-cog"></i>
+                                系统设置
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-user"></i>
+                                个人信息设置
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#">
+                                <i class="ace-icon fa fa-power-off"></i>
+                                登出
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- /section:basics/navbar.user_menu -->
+            </ul>
+        </div>
+
+        <!-- /section:basics/navbar.dropdown -->
+    </div><!-- /.navbar-container -->
+</div>
+
+<!-- 左边导航栏 -->
+<div class="main-container" id="main-container">
+
+    <!-- #section:basics/sidebar -->
+    <div id="sidebar" class="sidebar responsive">
+
+
+        <ul class="nav nav-list">
+
+            <li class="active">
+                <a href="index.html">
+                    <i class="menu-icon fa fa-tachometer"></i>
+                    <span class="menu-text"> 总控制台 </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+
+            <li class="">
+                <a href="RedisSwitchManage">
+                    <i class="menu-icon fa fa-list-alt"></i>
+                    <span class="menu-text"> 结算redis开关配置 </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+        </ul><!-- /.nav-list -->
+
+        <!-- #section:basics/sidebar.layout.minimize -->
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+
+    </div>
+
+    <!-- /section:basics/sidebar -->
+    <div class="main-content">
+        <!-- #section:basics/content.breadcrumbs -->
+        <div class="breadcrumbs" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="index.html">结算统一开发平台</a>
+                </li>
+            </ul><!-- /.breadcrumb -->
+
+            <!-- #section:basics/content.searchbox -->
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+							<span class="input-icon">
+								<input type="text" placeholder="请输入关键字 ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+								<i class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+                </form>
+            </div><!-- /.nav-search -->
+
+            <!-- /section:basics/content.searchbox -->
+        </div>
+
+        <div class="page-content">
+            <!-- /section:settings.box -->
+            <div class="page-content-area">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="alert alert-block alert-info">
+                            <button type="button" class="close" data-dismiss="alert">
+                                <i class="ace-icon fa fa-times"></i>
+                            </button>
+
+                            <i class="ace-icon fa fa-check green"></i>
+
+                            <strong class="green">最新公告：</strong>
+                            年轻人，早起的鸟儿有食吃。
+                        </div>
+                        <div class="row center">
+                            <img src="../image/logo_2.png" />
+                        </div><!-- /.row -->
+
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content-area -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+    <div class="footer">
+        <div class="footer-inner">
+            <!-- #section:basics/footer -->
+            <div class="footer-content">
+						<span class="bigger-120">
+							 统一开发平台- &copy; 2018  ：<a href="http://www.mycodes.net/" target="_blank">结算运维</a>
+						</span>
+            </div>
+
+            <!-- /section:basics/footer -->
+        </div>
+    </div>
+
+    <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+        <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+    </a>
+</div><!-- /.main-container -->
+</body>
+</html>

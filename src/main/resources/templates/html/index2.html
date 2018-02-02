@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/common/head.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/stl/logo.css" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="../js/jquery/jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var thisTime;
+            $('.nav-ul li').mouseleave(function(even){
+                thisTime	=	setTimeout(thisMouseOut,1000);
+            })
+
+            $('.nav-ul li').mouseenter(function(){
+                clearTimeout(thisTime);
+                var thisUB	=	$('.nav-ul li').index($(this));
+                if($.trim($('.nav-slide-o').eq(thisUB).html()) != "")
+                {
+                    $('.nav-slide').addClass('hover');
+                    $('.nav-slide-o').hide();
+                    $('.nav-slide-o').eq(thisUB).show();
+                }
+                else{
+                    $('.nav-slide').removeClass('hover');
+                }
+
+            })
+
+            function thisMouseOut(){
+                $('.nav-slide').removeClass('hover');
+            }
+
+            $('.nav-slide').mouseenter(function(){
+                clearTimeout(thisTime);
+                $('.nav-slide').addClass('hover');
+            })
+            $('.nav-slide').mouseleave(function(){
+                $('.nav-slide').removeClass('hover');
+            })
+
+        })
+    </script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="login">
+        <div class="logo">
+            <a href="index2.html">
+                    <img src="../image/logo.png" alt="" />
+            </a>
+        </div>
+        <div height="5px">
+            <hr width=1680 size="2" style="margin-left: -570px;margin-top: -30px" color="#F5FFFA" />
+        </div>
+        <div class="nav-main">
+            <div class="nav-box">
+                <div class="nav">
+                    <ul class="nav-ul">
+                        <li><a href="#" class="home"><span>首页</span></a></li>
+                        <li><a href="#" class="develop"><span>集群监控</span></a></li>
+                        <li><a href="#" class="wechat"><span>配置管控</span></a></li>
+
+                    </ul>
+                </div>
+                <div class="nav-slide">
+                    <div class="nav-slide-o"></div>
+                    <div class="nav-slide-o">
+                        <ul>
+                            <li><a href="#"><span>redis集群监控</span></a></li>
+
+                        </ul>
+                    </div>
+                    <div class="nav-slide-o">
+                        <ul>
+                            <li><a href="#"><span>job开关管控</span></a></li>
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

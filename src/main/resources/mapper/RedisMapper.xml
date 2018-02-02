@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.stlskyeye.stlapp.mapper.RedisMapper">
+    
+    <resultMap id="redisMap" type="com.stlskyeye.stlapp.domain.Redis">
+        <result column="id" property="id" jdbcType="VARCHAR" />
+        <result column="redisName" property="redisName" jdbcType="VARCHAR" />
+        <result column="switchName" property="switchName" jdbcType="VARCHAR" />
+        <result column="switchStatus" property="switchStatus" jdbcType="VARCHAR" />
+        <result column="powerName" property="powerName" jdbcType="VARCHAR" />
+        <result column="createName" property="createName" jdbcType="VARCHAR" />
+        <result column="modifyName" property="modifyName" jdbcType="VARCHAR" />
+        <result column="memo" property="memo" jdbcType="VARCHAR" />
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+        <result column="modify_time" property="modifyTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <sql id="redisColumn">
+        id,redisName,switchName,switchStatus,powerName,
+        createName,modifyName,memo,create_time,modify_time
+    </sql>
+
+    <insert id="insertRedisInfo" parameterType="com.stlskyeye.stlapp.domain.Redis">
+        INSERT INTO t_stl_redis_switch_info(
+        <include refid="redisColumn" />
+        ) VALUES (
+        #{id},
+        #{redisName},
+        #{switchName},
+        #{switchStatus},
+        #{powerName},
+        #{createName},
+        #{modifyName},
+        #{memo},
+        #{createTime},
+        #{modifyTime}
+        )
+    </insert>
+
+    <delete id="delRedisInfo" parameterType="String" >
+        delete from t_stl_redis_switch_info where id = #{json}
+    </delete>
+
+    <update id="updateRedisInfo" parameterType="com.stlskyeye.stlapp.domain.Redis">
+        update  t_stl_redis_switch_info set
+         redisName =  #{redisName},
+         switchName=  #{switchName},
+         switchStatus = #{switchStatus},
+         powerName = #{powerName},
+         modifyName = #{modifyName},
+         memo = #{memo},
+         modify_time =  #{modifyTime}
+         where id = #{id}
+    </update>
+    
+    
+    <select id="searchRedisInfoAll" resultMap="redisMap">
+        SELECT <include refid="redisColumn" />
+        from t_stl_redis_switch_info
+    </select>
+</mapper>

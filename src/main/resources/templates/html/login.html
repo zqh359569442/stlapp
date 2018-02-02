@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Home</title>
+<!-- Custom Theme files -->
+<link href="../css/common/head.css" rel="stylesheet" type="text/css" media="all" />
+<script src="../js/jquery/jquery.js"></script>
+<script src="../js/jquery/jquery.validate.min.js"></script>
+<script src="../js/jquery/messages_zh.js"></script>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script>
+    $.validator.setDefaults({
+        submitHandler: function() {
+            document.getElementById("loginForm ").submit();
+        }
+    });
+
+    $().ready(function() {
+        // 提交时验证表单
+        var validator = $("#loginForm").validate({
+            errorPlacement: function(error, element) {
+                // Append error within linked label
+                $( element )
+                    .closest( "form" )
+                    .find( "label[for='" + element.attr( "id" ) + "']" )
+                    .append( error );
+            },
+            errorElement: "span",
+            messages: {
+                user: {
+                    required: " *请输入用户名",
+                    minlength: " 不能少于8个字符"
+                },
+                password: {
+                    required: " *请输入密码",
+                    minlength: " 不能少于 5 个且不能大于 12 个",
+                    maxlength: " 不能少于 5 个且不能大于 12 个"
+                }
+            }
+        });
+
+        $(".cancel").click(function() {
+            validator.resetForm();
+        });
+    });
+
+</script>
+</head>
+<body>
+<div class="login">
+	<h2>WELCOME TO STL</h2>
+	<div class="login-top">
+		<h1>LOGIN FORM</h1>
+		<form id="loginForm" action="/login/login" method="post">
+			<label for="username" style="color: red"></label>
+			<input type="text" id="username" name="username" value="请输入用户名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入用户名';}" required minlength="8" />
+			<label for="password" style="color: red"></label>
+			<input type="password" id="password" name="password" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required minlength="5" maxlength="12" />
+
+	    <div class="forgot">
+	    	<a href="#">forgot Password</a>
+	    	<input type="submit" value="Login" >
+	    </div>
+		</form>
+	</div>
+	<div class="login-bottom">
+		<h3>New User &nbsp;<a href="/page/regist">Register</a>&nbsp Here</h3>
+	</div>
+</div>
+</body>
+</html>

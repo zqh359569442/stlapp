@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>欢迎，注册</title>
+    <!-- Custom Theme files -->
+    <link href="../css/common/head.css" rel="stylesheet" type="text/css" media="all"/>
+    <script src="../js/jquery/jquery.js"></script>
+    <script src="../js/jquery/jquery.validate.min.js"></script>
+    <script src="../js/jquery/messages_zh.js"></script>
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script>
+        $.validator.setDefaults({
+            submitHandler: function() {
+                document.getElementById("loginForm ").submit();
+            }
+        });
+
+        $().ready(function() {
+            // 提交时验证表单
+            var validator = $("#loginForm").validate({
+                errorPlacement: function(error, element) {
+                    // Append error within linked label
+                    $( element )
+                        .closest( "form" )
+                        .find( "label[for='" + element.attr( "id" ) + "']" )
+                        .append( error );
+                },
+                errorElement: "span",
+                messages: {
+                    user: {
+                        required: " *请输入用户名",
+                        minlength: " 不能少于8个字符"
+                    },
+                    password: {
+                        required: " *请输入密码",
+                        minlength: " 不能少于 5 个且不能大于 12 个",
+                        maxlength: " 不能少于 5 个且不能大于 12 个"
+                    }
+                }
+            });
+
+            $(".cancel").click(function() {
+                validator.resetForm();
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div class="login">
+    <h2>注&nbsp;&nbsp;&nbsp;&nbsp;册</h2>
+    <div class="login-top">
+        <form id="loginForm" action="/login/login" method="post">
+            <label for="username" style="color: red"></label>
+            <input type="text" id="username" name="username" value="请输入用户名" onfocus="if (this.value == '请输入用户名') {this.value = '';}" onblur="if (this.value == '') {this.value = '请输入用户名';}" required minlength="8">
+            <label for="password" style="color: red"></label>
+            <input type="password" id="password" name="password" value=""  onblur="if (this.value == '') {this.value = '';}" required minlength="5" maxlength="12">
+            <label for="email" style="color: red"></label>
+            <input type="text" id="email" name="email" value="请输入邮箱" onfocus="if (this.value == '请输入邮箱') {this.value = '';}" onblur="if (this.value == '') {this.value = '请输入邮箱';}" required minlength="5" maxlength="12">
+            <label for="phoneNum" style="color: red"></label>
+            <input type="text" id="phoneNum" name="phoneNum" value="请输入电话号码" onfocus="if (this.value == '请输入电话号码') {this.value = '';}" onblur="if (this.value == '') {this.value = '请输入电话号码';}" required minlength="5" maxlength="12">
+            <label for="belongName" style="color: red"></label>
+            <input type="text" id="belongName" name="belongName" value="请输入真实姓名" onfocus="if (this.value == '请输入真实姓名') {this.value = '';}" onblur="if (this.value == '') {this.value = '请输入真实姓名';}" required minlength="5" maxlength="12">
+            <label for="department" style="color: red"></label>
+            <input type="text" id="department" name="department" value="结算财务部" readonly="readonly" >
+
+            <div class="forgot">
+                <a href="page/login">返回登录页面</a>
+                <input type="submit" value="regist" >
+            </div>
+        </form>
+    </div>
+    <div class="login-bottom">
+        <h3>科技改变生活~~~</h3>
+    </div>
+</div>
+
+
+
+</body>
+</html>
