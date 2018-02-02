@@ -1,4 +1,4 @@
-package com.stlskyeye.stlapp.controller.login;
+﻿package com.stlskyeye.stlapp.controller.login;
 
 import com.stlskyeye.stlapp.domain.PageEnum;
 import com.stlskyeye.stlapp.domain.User;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class LoginController {
     @Autowired
-    private LoginService  loginService;
+    private LoginService  loginService;  
 
     /**
      * 用户登录系统
