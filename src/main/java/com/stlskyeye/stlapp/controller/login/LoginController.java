@@ -24,6 +24,7 @@ public class LoginController {
      */
     @RequestMapping("/login/login")
     public String login(HttpServletRequest request, HttpServletResponse response, User user){
+
         if(StringUtils.isEmpty(user.getPassword()) &&StringUtils.isEmpty(user.getUsername())){
             return PageEnum.LOGIN_PAGE.getPageUrl();
         }
@@ -51,12 +52,12 @@ public class LoginController {
         if(CookieUtil.getCookieByKey(request,user.getUsername())==null) {
             CookieUtil.addCookie(response,"userName",user.getUsername());
         }
-        if(CookieUtil.getCookieByKey(request,user.getBelongName())==null) {
+      /*  if(CookieUtil.getCookieByKey(request,user.getBelongName())==null) {
             CookieUtil.addCookie(response,"belongName",user.getBelongName());
         }
         if(CookieUtil.getCookieByKey(request,user.getDepartment())==null) {
             CookieUtil.addCookie(response,"department",user.getDepartment());
-        }
+        }*/
 
     }
 }

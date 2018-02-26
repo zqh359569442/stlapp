@@ -2,7 +2,7 @@ package com.stlskyeye.stlapp.domain;
 
 public enum PageEnum {
     LOGIN_PAGE("login","登录页面"),
-    INDEX_PAGE("index2","首页");
+    INDEX_PAGE("index","首页");
 
     PageEnum(String pageUrl,String pageName){
         this.pageUrl = pageUrl;

@@ -53,9 +53,9 @@ public class RedisServer implements IRedisServer{
             //如果有修改开关值，则需要修改redis数据
             if(!StringUtils.isEmpty(redis.getSwitchStatus())){
                 if("No".equals(redis.getSwitchStatus().trim())){
-                    redislogTemplate.opsForValue().set("StlClearKeyJob_"+redis.getSwitchName()+"_SWITCH","ON");
+                    redisTemplate.opsForValue().set("StlClearKeyJob_"+redis.getSwitchName()+"_SWITCH","ON");
                 }else if("Yes".equals(redis.getSwitchStatus().trim())){
-                    redislogTemplate.opsForValue().set("StlClearKeyJob_"+redis.getSwitchName()+"_SWITCH","OFF");
+                    redisTemplate.opsForValue().set("StlClearKeyJob_"+redis.getSwitchName()+"_SWITCH","OFF");
                 }
             }
         }else{
