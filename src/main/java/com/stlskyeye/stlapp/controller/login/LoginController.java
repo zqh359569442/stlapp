@@ -1,4 +1,4 @@
-﻿package com.stlskyeye.stlapp.controller.login;
+package com.stlskyeye.stlapp.controller.login;
 
 import com.stlskyeye.stlapp.domain.PageEnum;
 import com.stlskyeye.stlapp.domain.User;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class LoginController {
     @Autowired
-    private LoginService  loginService;  
+    private LoginService  loginService;
 
     /**
      * 用户登录系统
@@ -32,12 +32,31 @@ public class LoginController {
         if(token ==null){
             return PageEnum.LOGIN_PAGE.getPageUrl();
         }else{
-            CookieUtil.addCookie(response,"token",token);
+            if(CookieUtil.getCookieByKey(request,"token")==null) {
+                CookieUtil.addCookie(response, "token", token);
+            }
         }
-        CookieUtil.addCookie(response,"userName",user.getUsername());
-        //CookieUtil.addCookie(response,"belongName",user.getBelongName());
-        //CookieUtil.addCookie(response,"department",user.getDepartment());
+        setCookie(request, response, user);
         return PageEnum.INDEX_PAGE.getPageUrl();
     }
 
+    /**
+     * 往cookie中存放自己需要保存的用户数据
+     * @param request
+     * @param response
+     * @param user
+     */
+    private void setCookie(HttpServletRequest request,HttpServletResponse response,User user){
+
+        if(CookieUtil.getCookieByKey(request,user.getUsername())==null) {
+            CookieUtil.addCookie(response,"userName",user.getUsername());
+        }
+        if(CookieUtil.getCookieByKey(request,user.getBelongName())==null) {
+            CookieUtil.addCookie(response,"belongName",user.getBelongName());
+        }
+        if(CookieUtil.getCookieByKey(request,user.getDepartment())==null) {
+            CookieUtil.addCookie(response,"department",user.getDepartment());
+        }
+
+    }
 }
